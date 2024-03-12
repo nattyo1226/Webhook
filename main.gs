@@ -1,4 +1,4 @@
-function send_notification_to_slack_when_mail_arrived() {
+function send_notification_to_slack() {
   const slack_webhook_url = "{url}";
 
   // Gmailから質問箱の内容を取得する
