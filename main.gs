@@ -4,7 +4,7 @@ function send_notification_to_slack_when_mail_arrived() {
   // Gmailから質問箱の内容を取得する
   const query = 'Subject:"{name}さん、あなたに質問が届きました！" AND is:unread';
   const threads = GmailApp.search(query);
-  if (threads.length == 0){
+  if (threads.length == 0) {
     return;
   }
   let messages = threads[threads.length-1].getMessages();
@@ -16,7 +16,7 @@ function send_notification_to_slack_when_mail_arrived() {
 
   // SlackのWebhook URLに投稿するデータをまとめる
   const json = {
-    "text" : text
+    "text": text,
   };
 
   // SlackのWebhook URLに送信するデータをJSONに変換する
@@ -24,9 +24,9 @@ function send_notification_to_slack_when_mail_arrived() {
 
   // UrlFetchAppで使用するメソッドやコンテントタイプを指定
   const options = {
-    "method" : "post",
-    "contentType" : "application/json",
-    "payload" : payload
+    "method": "post",
+    "contentType": "application/json",
+    "payload": payload,
   };
 
   // Slackに送信
