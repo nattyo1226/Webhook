@@ -7,8 +7,8 @@ function send_notification_to_slack_when_mail_arrived() {
   if (threads.length == 0) {
     return;
   }
-  let messages = threads[threads.length-1].getMessages();
-  let message = messages[messages.length-1];
+  let messages = threads[threads.length - 1].getMessages();
+  let message = messages[messages.length - 1];
   let mail_Body = message.getBody();
   let mail_question = Parser.data(mail_Body).from('alt="').to('"').build();
   const text = "質問箱に質問が来ました。\n回答しましょう！\n質問: " + mail_question;
